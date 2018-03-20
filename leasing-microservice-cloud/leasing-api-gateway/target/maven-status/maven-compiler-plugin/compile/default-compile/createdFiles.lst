@@ -1,0 +1,3 @@
+com\tslc\leasing\gateway\api\APIGatewayApplication.class
+com\tslc\leasing\gateway\api\filter\SimpleFilter.class
+com\tslc\leasing\gateway\api\filter\SecurityProperties.class

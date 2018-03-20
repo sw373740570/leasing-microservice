@@ -1,0 +1,5 @@
+com\tslc\leasing\core\CoreApplication.class
+com\tslc\leasing\core\mapper\LeaseHoldMapper.class
+com\tslc\leasing\core\controller\LeaseHoldController.class
+com\tslc\leasing\core\service\LeaseHoldService.class
+com\tslc\leasing\core\model\LeaseHold.class

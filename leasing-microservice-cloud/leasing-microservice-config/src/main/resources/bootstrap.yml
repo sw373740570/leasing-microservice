@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: leasing-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/sw373740570/config-server.git
+#          username: liujianwei
+#          password: liujianwei
+#        native:
+#          search-locations: classpath:/config
+
+server:
+  port: 8889

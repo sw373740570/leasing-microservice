@@ -1,0 +1,29 @@
+spring:
+    profiles:
+        active: localhost
+    application:
+        name: leasing-api-gateway
+    http:
+      encoding:
+        enabled: true
+        charset: UTF-8
+        force: true
+
+ribbon:
+  eureka:
+    enabled: true
+
+server:
+    port: 5010
+    display-name: Leasing-Microservice-API
+    contextPath: /api/tslc
+
+
+
+---
+#localhost
+spring:
+  profiles: localhost
+  cloud:
+    config:
+      uri: http://localhost:8889/

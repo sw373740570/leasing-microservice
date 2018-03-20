@@ -1,0 +1,55 @@
+server:
+    port: 8765
+
+spring:
+  application:
+    name: discovery-server
+  profiles:
+    active: localhost
+
+#必须放在这里，如果放到配置文件中，会导致注册不了
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+---
+#localhost
+spring:
+  profiles: localhost
+  cloud:
+    config:
+      uri: http://localhost:8889/
+
+---
+#dev
+spring:
+  profiles: dev
+  cloud:
+    config:
+      uri: http://10.102.9.170:8889/
+
+
+---
+#test
+spring:
+  profiles: test
+  cloud:
+    config:
+      uri: http://10.154.40.121:8889/
+
+---
+#cluster
+spring:
+  profiles: cluster
+  cloud:
+    config:
+      uri: http://10.154.40.131:8889/
+
+---
+#prod
+spring:
+  profiles: prod
+  cloud:
+    config:
+      uri: http://10.1.8.135:8889/

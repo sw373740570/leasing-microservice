@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tslc.leasing.core.mapper.LeaseHoldMapper" >
+    <resultMap id="BaseResultMap" type="com.tslc.leasing.core.model.LeaseHold">
+        <id column="ID" property="id" jdbcType="INTEGER" />
+        <result column="CUST_NAME" property="custName" jdbcType="NVARCHAR" />
+        <result column="IDCARD" property="idcard" jdbcType="NVARCHAR" />
+        <result column="CUST_FLAG" property="custFlag" jdbcType="INTEGER" />
+    </resultMap>
+
+    <insert id="insert" parameterType="com.tslc.leasing.core.model.LeaseHold">
+        INSERT INTO T_LEASEHOLD (CUST_NAME,IDCARD,CUST_FLAG) VALUES (#{custName},#{idcard},#{custFlag})
+    </insert>
+
+    <select id="getList" resultMap="BaseResultMap">
+        SELECT * FROM T_LEASEHOLD
+    </select>
+</mapper>

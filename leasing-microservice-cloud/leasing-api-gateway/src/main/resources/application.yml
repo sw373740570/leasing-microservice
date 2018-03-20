@@ -1,0 +1,22 @@
+zuul:
+  ignoredServices: '*'
+  routes:
+    coreService:
+      path: /core/**
+      stripPrefix: false
+      serviceId: leasing-core-service
+
+
+leasingSecurity:
+    unauthorizedUrl: /auth/unauthorized
+    loginSecurityUrl: /auth/login
+    filterChainDefinitions:
+      "/static/**": anno
+      "/common/**": anno
+      "/core/**": authc
+      "/vbs/**": authc
+      "/file/**": authc
+      "/vcredit/o2o/**": authc
+      "/common/dictionaries": anno
+      "/referral/**": anno
+      "/weChatInteractive/**": anno
