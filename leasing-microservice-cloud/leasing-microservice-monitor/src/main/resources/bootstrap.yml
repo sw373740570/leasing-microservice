@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: leasing-hystrix-dashboard
+server:
+  port: 1301

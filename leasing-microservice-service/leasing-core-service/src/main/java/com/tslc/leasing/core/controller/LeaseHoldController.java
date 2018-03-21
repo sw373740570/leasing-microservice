@@ -1,5 +1,6 @@
 package com.tslc.leasing.core.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.tslc.leasing.core.service.LeaseHoldService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,6 +27,7 @@ public class LeaseHoldController {
     @Autowired
     private LeaseHoldService leaseHoldService;
 
+    @HystrixCommand(fallbackMethod = "fallback")
     @RequestMapping(value = "/getList", method = RequestMethod.GET)
     public Map<String, Object> getList(){
         logger.info("/getList");
@@ -39,4 +41,9 @@ public class LeaseHoldController {
         return testStr;
     }
 
+    public Map<String, Object> fallback(){
+        Map<String, Object> result = new HashMap<>();
+        result.put("result","fallback");
+        return result;
+    }
 }

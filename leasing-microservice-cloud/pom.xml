@@ -16,6 +16,7 @@
         <module>leasing-microservice-config</module>
         <module>leasing-microservice-discovery</module>
         <module>leasing-api-gateway</module>
+        <module>leasing-microservice-monitor</module>
     </modules>
     <dependencies>
         <dependency>
