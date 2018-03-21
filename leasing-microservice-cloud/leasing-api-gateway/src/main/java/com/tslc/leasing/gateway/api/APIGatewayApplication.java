@@ -23,14 +23,14 @@ public class APIGatewayApplication {
         return new SimpleFilter();
     }
 
-    @Bean
-    public RestOperations nonLoadbalancedRestTemplate() {
-        return new RestTemplate();
-    }
-
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
+//    @Bean
+//    public RestOperations nonLoadbalancedRestTemplate() {
+//        return new RestTemplate();
+//    }
+//
+//    @Bean
+//    @LoadBalanced
+//    public RestTemplate restTemplate() {
+//        return new RestTemplate();
+//    }
 }
