@@ -7,10 +7,21 @@ spring:
   profiles:
     active: localhost
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8765/eureka/
 ---
 #localhost
 spring:
   profiles: localhost
   cloud:
     config:
-      uri: http://localhost:8889/
+#      uri: http://localhost:8889/
+      discovery:
+        enabled: true
+        service-id: leasing-config-server
+
+management:
+  security:
+    enabled: false

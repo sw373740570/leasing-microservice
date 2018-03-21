@@ -1,6 +1,8 @@
 spring:
   application:
     name: leasing-config-server
+  profiles:
+      active: localhost
   cloud:
     config:
       server:

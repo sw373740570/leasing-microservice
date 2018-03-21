@@ -4,6 +4,8 @@ import com.tslc.leasing.core.service.LeaseHoldService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,9 +15,13 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("core/leaseHold")
+@RefreshScope
 public class LeaseHoldController {
 
     private final static Logger logger = LoggerFactory.getLogger(LeaseHoldController.class);
+
+    @Value("${testStr}")
+    private String testStr;
 
     @Autowired
     private LeaseHoldService leaseHoldService;
@@ -26,6 +32,11 @@ public class LeaseHoldController {
         Map<String, Object> jsonObject = new HashMap<>();
         jsonObject.put("result",leaseHoldService.getList());
         return jsonObject;
+    }
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String test(){
+        return testStr;
     }
 
 }
